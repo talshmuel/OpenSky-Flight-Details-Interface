@@ -22,17 +22,18 @@ To run this project, follow these steps:
 
 3. **Build the project**:
     Run the following commands in the terminal in the given order:
-    a. `sudo apt install cmake`
-    b. `cmake .`
-    c. `make`
+    a. `sudo apt-get install libzip-dev`
+    b. `sudo apt install cmake`
+    c. `cmake .`
+    d. `make`
 
-4. **Run the project**:
+5. **Run the project**:
     Execute the following command in the terminal:
     ```
     ./runMe
     ```
 
-5. **Menu Options**:
+6. **Menu Options**:
     After running the project, the following menu will appear:
     ```
     1 - Fetch airports incoming flights.
@@ -46,7 +47,7 @@ To run this project, follow these steps:
     ```
     Choose an option by entering the corresponding number.
 
-6. **Input Requirements**:
+7. **Input Requirements**:
     - For option 1: Enter the ICAO codes of airports as arguments.
     - For options 2 and 3: Enter the ICAO code of the airport or the ICAO24 codes of aircraft, respectively.
 
