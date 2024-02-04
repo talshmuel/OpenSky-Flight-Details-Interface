@@ -1,50 +1,67 @@
 # OpenSky Network Flight Details Printer
 
-This project provides an interface for printing flight details from the OpenSky Network. It is specifically designed to run on a Linux environment.
+This project provides an interface for printing flight details from the OpenSky Network. The project is designed to run on a Linux environment.
 
-The project leverages processes and communication between them to enhance its functionality. By utilizing this approach, the program is able to effectively handle multiple tasks simultaneously, resulting in improved performance and efficient execution.
+This project leverages processes and communication between them to enhance its functionality. By utilizing this approach, the program is able to effectively handle multiple tasks simultaneously, resulting in improved performance and efficient execution.
 
-## Steps for Usage
+## Running Instructions
 
-To use this project, follow the steps outlined below:
+To run this project, follow these steps:
 
 1. **Clone repository**: 
     ```
     git clone <repository_url>
     ```
-2. **Build the project**:
-    ```
-    cd <repository_directory>
-    mkdir build
-    cd build
-    cmake ..
-    make
-    cd ..
-    ```
-3. **Run the program**:
-    ```
-    ./runMe.out
-    ```
-4. **Press "UpdateDB"**: 
-    This option is number 4 in the menu. It is essential to create the database, and it should be the first action you take.
 
-5. **Choose different actions from the menu**:
-    Once the database is updated, you can select various actions from the menu.
+2. **Create the Database**: 
+    Run the provided bash script by typing the following command in the terminal:
+    ```
+    bash flightScanner.sh <arg1> <arg2> <...>
+    ```
+    Replace `<arg1>`, `<arg2>`, etc. with the ICAO codes of the airports you want to include in the database.
 
-## General Notes
+3. **Build the project**:
+    Run the following commands in the terminal in the given order:
+    a. `sudo apt install cmake`
+    b. `cmake .`
+    c. `make`
 
-Please take note of the following general information:
+4. **Run the project**:
+    Execute the following command in the terminal:
+    ```
+    ./runMe
+    ```
+
+5. **Menu Options**:
+    After running the project, the following menu will appear:
+    ```
+    1 - Fetch airports incoming flights.
+    2 - Fetch airports full flights schedule.
+    3 - Fetch aircraft full flights schedule.
+    4 - Update DB.
+    5 - Zip DB files.
+    6 - Get child process PID.
+    7 - Exit.
+    Please make your choice <1,2,3,4,5,6,7>:
+    ```
+    Choose an option by entering the corresponding number.
+
+6. **Input Requirements**:
+    - For option 1: Enter the ICAO codes of airports as arguments.
+    - For options 2 and 3: Enter the ICAO code of the airport or the ICAO24 codes of aircraft, respectively.
+
+
+
+
+## General Information
 
 - **Operating System**: Linux.
 - **Compiler**: GCC.
-- The directory "flightsDB" should be in the root directory.
 - To execute the program, you need permissions to read, write, and execute.
+- If you exit the program using option 7 or CTRL+C, the DB will be compressed into a zip file, and the original DB will be deleted.
+- If you open the program a second time, the compressed DB will be extracted to the program folder.
 
-## Program Behavior Notes
 
-Consider the following notes about the behavior of the program:
-
-- If there aren't any arrivals or departures from a certain airport, the program will delete the files `.arv` or `.dst`, and if both are missing, it'll delete the airport directory.
-- The program's arguments are case-sensitive. You should type Airports ICAO in uppercase and Airplane ICAO24 in lowercase.
 
 ---
+
