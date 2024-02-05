@@ -1,4 +1,4 @@
-# OpenSky Network Flight Details Printer
+# OpenSky Network Flight Details Interface
 
 This project provides an interface for printing flight details from the OpenSky Network. The project is designed to run on a Linux environment.
 
